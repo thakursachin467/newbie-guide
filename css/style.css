@@ -1,0 +1,38 @@
+body, html {
+    height: 100%;
+    margin: 0;
+}
+
+
+
+.main {
+  background-image: url('../images/test.jpg');
+  min-height:100vh;
+  min-width: 100vh;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+
+
+.ptext{
+  position:absolute;
+  top:30%;
+  width:100%;
+  padding-left: 10%;
+  text-align:left;
+  color:#000;
+  font-size:27px;
+  letter-spacing:8px;
+  text-transform:uppercase;
+}
+
+.ptext .border{
+  background-color:#111;
+  color:#fff;
+  padding:20px;
+}
+
+.ptext .border.trans{
+  background-color:transparent;
+}
