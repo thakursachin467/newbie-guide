@@ -23,6 +23,14 @@ body, html {
 
 .nav {
   display: none;
+
+
+}
+nav ul li a{
+  color: black;
+}
+nav a{
+  color: black;
 }
 
 .ptext{

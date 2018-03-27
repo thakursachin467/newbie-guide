@@ -27,8 +27,9 @@ sr.reveal('.main3',{
   mobile: false,
   viewFactor: 0.2,
   opacity:0,
+  
   easing: 'cubic-bezier(0.6, 0.2, 0.1, 1)',
-  distance:'1300px',
+  //distance:'1300px',
   rotate: { x:0, y: 40, z: 0 }
 }, 50);
 
@@ -38,8 +39,9 @@ sr.reveal('.main4',{
   delay:2000,
   mobile: false,
   opacity:0,
+  reset: true,
   easing: 'cubic-bezier(0.6, 0.2, 0.1, 1)',
-  distance:'1300px',
+  //distance:'1300px',
   rotate: { x:0, y: 40, z: 0 }
 }, 50);
 
@@ -49,8 +51,9 @@ sr.reveal('.main5',{
   delay:2000,
   mobile: false,
   opacity:0,
+  reset: true,
   easing: 'cubic-bezier(0.6, 0.2, 0.1, 1)',
-  distance:'1800px',
+  //distance:'1800px',
   rotate: { x:0, y: 40, z: 0 }
 }, 50);
 
@@ -63,7 +66,7 @@ sr.reveal('.main6',{
   opacity:0,
   reset: true,
   easing: 'cubic-bezier(0.6, 0.2, 0.1, 1)',
-  distance:'1300px',
+  //distance:'1300px',
   rotate: { x:0, y: 40, z: 0 }
 }, 50);
 
@@ -73,20 +76,21 @@ sr.reveal('.main7',{
   delay:2000,
   mobile: false,
   opacity:0,
+  reset: true,
   easing: 'cubic-bezier(0.6, 0.2, 0.1, 1)',
-  distance:'1300px',
+  //distance:'1300px',
   rotate: { x:0, y: 40, z: 0 }
 }, 50);
 
 sr.reveal('.main8',{
   duration:3000,
-  origin:'right',
+  origin:'left',
   reset: true,
   delay:1000,
   mobile: false,
   opacity:0,
   easing: 'cubic-bezier(0.6, 0.2, 0.1, 1)',
-  distance:'1800px',
+  //distance:'1800px',
   rotate: { x:0, y: 40, z: 0 }
 }, 50);
 
