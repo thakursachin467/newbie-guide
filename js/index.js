@@ -27,7 +27,7 @@ sr.reveal('.main3',{
   mobile: false,
   viewFactor: 0.2,
   opacity:0,
-  
+
   easing: 'cubic-bezier(0.6, 0.2, 0.1, 1)',
   //distance:'1300px',
   rotate: { x:0, y: 40, z: 0 }
@@ -48,7 +48,7 @@ sr.reveal('.main4',{
 sr.reveal('.main5',{
   duration:3000,
   origin:'left',
-  delay:2000,
+  delay:3000,
   mobile: false,
   opacity:0,
   reset: true,
@@ -60,8 +60,7 @@ sr.reveal('.main5',{
 sr.reveal('.main6',{
   duration:3000,
   origin:'left',
-  viewFactor: 0.5,
-  delay:2000,
+  delay:4000,
   mobile: false,
   opacity:0,
   reset: true,
@@ -73,7 +72,7 @@ sr.reveal('.main6',{
 sr.reveal('.main7',{
   duration:3000,
   origin:'left',
-  delay:2000,
+  delay:5000,
   mobile: false,
   opacity:0,
   reset: true,
@@ -86,7 +85,7 @@ sr.reveal('.main8',{
   duration:3000,
   origin:'left',
   reset: true,
-  delay:1000,
+  delay:6000,
   mobile: false,
   opacity:0,
   easing: 'cubic-bezier(0.6, 0.2, 0.1, 1)',
