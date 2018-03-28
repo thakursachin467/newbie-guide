@@ -93,6 +93,9 @@ sr.reveal('.main8',{
   rotate: { x:0, y: 40, z: 0 }
 }, 50);
 
+$(document).ready(function(){
+   $('.tooltipped').tooltip({delay: 50});
+ });
 
 
 $(window).scroll(function(){
