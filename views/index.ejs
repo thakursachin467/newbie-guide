@@ -6,37 +6,63 @@
   <meta http-equiv="X-UA-Compatible" content="ie=edge">
   <title>NewBiew Guide</title>
   <link rel="stylesheet" href="../assests/css/style.css"></link>
+
+
+    <script   src="https://code.jquery.com/jquery-3.3.1.min.js"   integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8="   crossorigin="anonymous"></script>
   <script src="https://unpkg.com/scrollreveal/dist/scrollreveal.min.js"></script>
   <!-- Compiled and minified CSS -->
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0-beta/css/materialize.min.css">
-  <script   src="https://code.jquery.com/jquery-3.3.1.min.js"   integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8="   crossorigin="anonymous"></script>
     <!-- Compiled and minified JavaScript -->
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0-beta/js/materialize.min.js"></script>
-  <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.98.1/css/materialize.min.css">
 
+  <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
   <script type="text/javascript" src="https://code.angularjs.org/1.6.9/angular.min.js"> </script>
   <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.9/angular-route.min.js"></script>
-<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.9/angular-resource.min.js"></script>
+  <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.9/angular-resource.min.js"></script>
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css"></link>
+
 
 </head>
 <body>
-  <div class="navbar-fixed nav">
-    <nav >
-      <div class="nav-wrapper red black-text">
-        <ul class="left hide-on-med-and-down">
-          <li><a href="">Placements</a></li>
-          <li><a href="">Contact Us</a></li>
-        </ul>
-        <a href="#!" class="brand-logo center "><img src="https://www.chitkara.edu.in/wp-content/uploads/2017/11/chitkara-university-logo.png" width='150px' height='150px' class="responsive-img"></a>
-        <a href="#" data-target="mobile-demo" class="sidenav-trigger"><i class="material-icons">menu</i></a>
-        <ul class="right hide-on-med-and-down">
-          <li><a href="">About Us</a></li>
-          <li><a href="">Programs</a></li>
-        </ul>
-      </div>
-    </nav>
-  </div>
+  <ul id="slide-out" class="side-nav hoverable ">
+    <ul class="row">
+            <div class="col s6">
+					<li><a href="#!"  class="tooltipped" data-position="bottom" data-delay="50" data-tooltip="Home"><i class="fa fa-home"></i></a></li>
+          </div>
+            <div class="col s6">
+					<li><a href="/forums" class="tooltipped" data-position="bottom" data-delay="50" data-tooltip="Forums"><i class="fa fa-comment"></i></a></li>
+          </div>
+
+				</ul>
+
+    <li><a href="#!aboutus"><i class="fa fa-info"></i>About</a></li>
+      <li><a href="#!admissions"><i class="fa fa-graduation-cap"></i>Admissions</a></li>
+      <li><a href="#!facilities"><i class="fa fa-user"></i>Facilities </a></li>
+      <li><a href="#!placements"><i class="fa fa-handshake-o"></i>Placements</a></li>
+      <li><a href="#!researches"><i class="fa fa-search"></i>Research</a></li>
+      <li><a href="#!complain"><i class="fa fa-commenting-o"></i>complain</a></li>
+      <li><a href="#!parents"><i class="fa fa-users"></i>Login</a></li>
+      <li><a href="#!Campuslife"><i class="fa fa-bed"></i>Campus Life</a></li>
+      <li><a href="#!contactus"><i class="fa fa-phone"></i>Contact Us</a></li>
+
+
+   </ul>
+
+   <!-- NAV BAR -->
+   <div class="navbar-fixed">
+         <nav id="navbars ">
+           <div class="nav-wrapper">
+             <ul class="left hide-on-med-and-down right">
+
+               <li><a href="mailto:thakursachin467@gmail.com">Get In Touch</a></li>
+
+      </ul>
+      <a href="#!" class="brand-logo center "><img src="https://www.chitkara.edu.in/wp-content/uploads/2017/11/chitkara-university-logo.png" width='150px' height='150px' class="responsive-img"></a>
+
+             <a href="#" data-activates="slide-out" class="button-collapse show-on-large left"><i class="material-icons">menu</i></a>
+          </div>
+      </nav>
+    </div>
+
 
 <div class="main-content">
   <div ng-view >
@@ -57,7 +83,7 @@
                         <ul class="list-unstyled">
                             <li><a href="https://www.chitkara.edu.in">Our Website</a></li>
                             <li><a href="mailto:thakursachin467@gmail.com">Get In Touch</a></li>
-                            <li><a href="complain/complain.html">Complain</a></li>
+                            <li><a href="#!complain">Complain</a></li>
                         </ul>
                     </div>
 
@@ -123,10 +149,25 @@
   <!--footer ends here -->
 
 
-
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.98.1/js/materialize.min.js"></script>
 
 <script type="text/javascript" src="../assests/js/app.js"></script>
+<script type="text/javascript">
+(function(){
 
+  $(".button-collapse").sideNav();
+
+  $('.button-collapse').sideNav({
+   menuWidth: 300, // Default is 300
+   edge: 'left', // Choose the horizontal origin
+   closeOnClick: true, // Closes side-nav on <a> clicks, useful for Angular/Meteor
+   draggable: true // Choose whether you can drag to open on touch screens
+ }
+);
+
+})();
 </script>
+
+
 </body>
 </html>

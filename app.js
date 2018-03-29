@@ -1,6 +1,8 @@
 var express = require('express');
 var firebase = require("firebase");
 var signin = require('./validation/signin');
+var complain = require('./validation/complain');
+
 
 
 
@@ -17,5 +19,6 @@ app.get('/', function(req, res) {
 });
 
 signin(app);
+complain(app);
 
 app.listen(port);

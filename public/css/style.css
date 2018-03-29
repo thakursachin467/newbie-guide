@@ -9,23 +9,31 @@ body, html {
   min-height: 100vh;
 }
 
-.button {
+.middle {
+			width: 50%;
+			margin: auto;
+			border: 2px solid black;
+			margin-top: 60px;
+			background-color: white;
+			box-shadow: 5px 8px grey;
+		}
 
-  cursor: pointer;
-  display: inline-block;
-  background-color: red;
-  color: white;
-  padding: 80px;
-  border-radius: 50%;
-
-}
+		.middle-2 {
+			background-color: #42f4f4;
+		}
 
 
-.info {
+		.alert {
+			border: 2px ;
+			margin-left: 10px;
+			margin-right: 10px;
+			padding: 10px;
+			background-color: 	#7CFC00;
+			text-align: center;
+			margin-bottom: 10px;
+			display: none;
+		}
 
-  background-color: #F5F5F5;
-
-}
 
 
 .main {
@@ -45,11 +53,17 @@ body, html {
 }
 
 .nav {
-  display: none;
+  display: block;
+  background-color: red;
+ position: absolute;
 
 
 
 }
+button-collapse {
+    position: absolute;
+}
+
 nav ul li a{
   color: black;
 }

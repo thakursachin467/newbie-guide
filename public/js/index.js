@@ -98,11 +98,11 @@ $(document).ready(function(){
  });
 
 
-$(window).scroll(function(){
+/*$(window).scroll(function(){
     if ($(window).scrollTop() >= $(window).height() * 1) {
       $('.nav').css("display","block");
 
     } else {
         $('.nav').css("display","none");
     }
-  });
+  }); */
