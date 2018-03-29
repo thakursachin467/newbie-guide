@@ -2,6 +2,7 @@ var express = require('express');
 var firebase = require("firebase");
 var signin = require('./validation/signin');
 var complain = require('./validation/complain');
+var teachersInfo =require('./validation/teachersInfo');
 
 
 
@@ -20,5 +21,6 @@ app.get('/', function(req, res) {
 
 signin(app);
 complain(app);
+teachersInfo(app);
 
 app.listen(port);
