@@ -1,6 +1,6 @@
 var app= angular.module('myapp',['ngRoute','ngResource']);
 
-app.config(function($routeProvider,$qProvider,$sceProvider){
+app.config(function($routeProvider,$qProvider,$sceProvider, $locationProvider){
 
   $routeProvider
   .when('/',{
@@ -63,6 +63,8 @@ app.config(function($routeProvider,$qProvider,$sceProvider){
 
   })
 
+
+$locationProvider.html5Mode(true)
 
 });
 
