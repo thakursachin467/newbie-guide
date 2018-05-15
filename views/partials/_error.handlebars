@@ -1,0 +1,44 @@
+{{#if error_msg}}
+<div class="row ">
+            <div class="m12 s12 col">
+                <div class="card-panel red accent-4">
+                    <div class="row">
+                        <div class="col l8 white-text">
+                            {{error_msg}}
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+{{/if}}
+
+{{#if error}}
+<div class="row ">
+            <div class="m12 s12 col">
+                <div class="card-panel red accent-4">
+                    <div class="row">
+                        <div class="col l8 white-text">
+                            {{message}}
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+{{/if}}
+
+{{#if errors}}
+{{#each errors}}
+<div class="row ">
+            <div class="m12 s12 col">
+                <div class="card-panel red accent-4">
+                    <div class="row">
+                        <div class="col l8 white-text">
+                            {{text}}
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+{{/each}}
+{{/if}}

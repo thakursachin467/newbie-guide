@@ -5,7 +5,7 @@ var users= require('../models/user');
 
 module.exports = function(passport) {
 
-  passport.use(new LocalStrategy({usernameField:'email'},
+passport.use(new LocalStrategy({usernameField:'email'},
 function(email, password, done) {
   users.findOne({ email: email })
   .then((data)=>{

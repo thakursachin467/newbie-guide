@@ -1,3 +1,4 @@
+
 <ul id="slide-out" class="side-nav hoverable ">
   <ul class="row">
           <div class="col s6">
@@ -15,9 +16,13 @@
     <li><a href="/quicklinks/placements"><i class="fa fa-handshake-o"></i>Placements</a></li>
     <li><a href="/quicklinks/researches"><i class="fa fa-search"></i>Research</a></li>
     <li><a href="/quicklinks/complain"><i class="fa fa-commenting-o"></i>complain</a></li>
-    <li><a href="/login"><i class="fa fa-users"></i>Login</a></li>
     <li><a href="/quicklinks/Campuslife"><i class="fa fa-bed"></i>Campus Life</a></li>
     <li><a href="/quicklinks/contactus"><i class="fa fa-phone"></i>Contact Us</a></li>
+    {{#if userid}}
+    <li><a href="/logout"><i class="fa fa-sign-out"></i> Logout</a></li>
+    {{else}}
+    <li><a href="/login"><i class="fa fa-users"></i>login</a></li>
+    {{/if}}
 
 
  </ul>

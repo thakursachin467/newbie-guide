@@ -2,6 +2,7 @@ var express = require('express');
 var exphbs = require('express-handlebars');
 var pages= require('./routes/pages');
 var login= require('./routes/login');
+var dashboard= require('./routes/dashboard');
 var database= require('./database/connect');
 var methodOverride = require('method-override');
 var bodyParser = require('body-parser');
@@ -9,13 +10,16 @@ var session = require('express-session');
 var flash = require('connect-flash');
 var passport = require('passport');
 var pasportConfig= require('./config/passport');
+const {admin}=require('./helpers/hbs');
 var app=express();
 
 
 var port= process.env.PORT ||3000;
 app.use('/assests',express.static(__dirname +'/public'));
 
-app.engine('handlebars', exphbs({defaultLayout: 'main'}));
+app.engine('handlebars', exphbs({helpers:{
+	admin:admin
+},defaultLayout: 'main'}));
 app.set('view engine', 'handlebars');
 
 // parse application/json
@@ -46,6 +50,7 @@ app.use(session({
      res.locals.error_msg= req.flash('error_msg');
      res.locals.error= req.flash('error');
      res.locals.userid=req.user || null;
+		 res.locals.session=req.session;
        next();
 
  });
@@ -65,9 +70,16 @@ app.get('/foodcourt',(req,res)=>{
 
 
 
-
+//will handle only small pages route
 pages(app);
+
+//will handle all the dashboard routes here
+dashboard(app);
+
+//will handle all the login logout and register routes
 login(app,passport);
+//to config our local Strategy with the login
+pasportConfig(passport);
 
 database.databaseconnectionusers();
 

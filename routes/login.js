@@ -3,6 +3,11 @@ var bcrypt = require('bcryptjs');
 var bodyParser = require('body-parser');
 module.exports = function(app,passport) {
 
+  // parse application/x-www-form-urlencoded
+  app.use(bodyParser.urlencoded({ extended: false }));
+  // parse application/json
+  app.use(bodyParser.json());
+
   app.get('/login',(req, res)=>{
       res.render('users/login');
   });
@@ -46,7 +51,7 @@ module.exports = function(app,passport) {
       errors.push({text:'Password should be more then 4 characters'});
     }
     if(errors.length>0){
-      res.render('users/register',{
+      res.render('users/login',{
         errors:errors,
         firstname:req.body.firstname,
         lastname:req.body.lastname,
@@ -61,7 +66,7 @@ module.exports = function(app,passport) {
       .then((data)=>{
         if(data) {
           req.flash('error_msg','user already exists with this email');
-          res.redirect('/register');
+          res.redirect('/login');
         }
         else {
             var user = users({
