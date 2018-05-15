@@ -45,22 +45,22 @@ position: absolute;
 				<h3 class="teal-text">Welcome</h3>
 				<div class="row">
 					<div class="input-field col s12">
-						<input id="email" type="email" class="validate">
+						<input id="email" type="email" class="validate" name="email">
 						<label for="email">Email</label>
 					</div>
 				</div>
 				<div class="row">
 					<div class="input-field col s12">
-						<input id="password" type="password" class="validate">
+						<input id="password" type="password" class="validate" name="password">
 						<label for="password">Password</label>
 					</div>
 				</div>
 				<br>
 				<center>
-					<button class="btn waves-effect waves-light teal" type="submit" name="action"><i class="fa fa-sign-in" aria-hidden="true"></i>Connect</button>
+					<button class="btn waves-effect waves-light teal" type="submit" name="action"><i class="fa fa-sign-in" aria-hidden="true"></i> Connect</button>
 					<br>
 					<br>
-					<a href="">Forgotten password?</a>
+					<a href="" >Forgotten password?</a>
 				</center>
 			</div>
 		</form>
@@ -71,47 +71,47 @@ position: absolute;
 				<h3 class="teal-text">Register</h3>
 				<div class="row">
 					<div class="input-field col s6">
-						<input id="last_name" type="text" class="validate">
+						<input id="last_name" type="text" class="validate" name="firstname" value="{{firstname}}" required>
 						<label for="last_name">First Name</label>
 					</div>
 					<div class="input-field col s6">
-						<input id="last_name" type="text" class="validate">
+						<input id="last_name" type="text" class="validate" name="lastname" value="{{lastname}}" required>
 						<label for="last_name">Last Name</label>
 					</div>
 				</div>
 				<div class="row">
 					<div class="input-field col s12">
-						<input id="email" type="email" class="validate">
+						<input id="email" type="email" class="validate" name="email" value="{{email}}" required>
 						<label for="email">Email</label>
 					</div>
 				</div>
 				<div class="row">
 					<div class="input-field col s12">
-						<input id="email-confirm" type="email" class="validate">
+						<input id="email-confirm" type="email" class="validate" name="email1" value="{{email1}}" required>
 						<label for="email-confirm">Email Confirmation</label>
 					</div>
 				</div>
 				<div class="row">
 					<div class="input-field col s12">
-						<input id="password" type="password" class="validate">
+						<input id="password" type="password" class="validate" name="password" value="{{password}}" required>
 						<label for="password">Password</label>
 					</div>
 				</div>
 				<div class="row">
 					<div class="input-field col s12">
-						<input id="password-confirm" type="password" class="validate">
+						<input id="password-confirm" type="password" class="validate" name="password1" value="{{password1}}" required>
 						<label for="password-confirm">Password Confirmation</label>
 					</div>
 				</div>
         <div class="row">
 					<div class="input-field col s12">
-						<input id="password-confirm" type="password" class="validate">
+						<input id="password-confirm" type="password" class="validate" name="admin">
 						<label for="password-confirm">Admin Code(only for admins)</label>
 					</div>
 				</div>
         <div class="row">
 					<div class="input-field col s12">
-						<input id="password-confirm" type="password" class="validate">
+						<input id="password-confirm" type="password" class="validate" name="teacher">
 						<label for="password-confirm">Teacher Code(only for teachers)</label>
 					</div>
 				</div>

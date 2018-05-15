@@ -9,55 +9,55 @@ app.config(function($routeProvider,$qProvider,$sceProvider, $locationProvider){
 
   })
 
-  .when('/teachersinfo',{
+  .when('/quicklinks/teachersinfo',{
     templateUrl : './assests/pages/teachersinfo.html',
     controller:'teachercontroller'
 
   })
 
-  .when('/aboutus',{
+  .when('/quicklinks/aboutus',{
     templateUrl : './assests/pages/about.html',
     controller:'aboutcontroller'
 
   })
 
-  .when('/contactus',{
+  .when('/quicklinks/contactus',{
     templateUrl : './assests/pages/contact.html',
     controller:'aboutcontroller'
 
   })
 
-  .when('/admissions',{
+  .when('/quicklinks/admissions',{
     templateUrl : './assests/pages/admissions.html',
     controller:'aboutcontroller'
 
   })
 
-  .when('/facilities',{
+  .when('/quicklinks/facilities',{
     templateUrl : './assests/pages/facilities.html',
     controller:'aboutcontroller'
 
   })
 
-  .when('/placements',{
+  .when('/quicklinks/placements',{
     templateUrl : './assests/pages/placements.html',
     controller:'aboutcontroller'
 
   })
 
-  .when('/researches',{
+  .when('/quicklinks/researches',{
     templateUrl : './assests/pages/researches.html',
     controller:'aboutcontroller'
 
   })
 
-  .when('/complain',{
+  .when('/quicklinks/complain',{
     templateUrl : './assests/pages/complain.html',
     controller:'aboutcontroller'
 
   })
 
-  .when('/Campuslife',{
+  .when('/quicklinks/Campuslife',{
     templateUrl : './assests/pages/campuslife.html',
     controller:'aboutcontroller'
 
@@ -81,7 +81,10 @@ app.controller('teachercontroller',function($scope) {
 });
 
 
-app.controller('aboutcontroller',function($scope) {
-
+app.controller('aboutcontroller',function($scope, $http) {
+  $http.get("/login")
+.then(function(response) {
+$scope.myWelcome = response.data;
+});
 
 });

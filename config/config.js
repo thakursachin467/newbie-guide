@@ -1,12 +1,10 @@
-var firebase=require('firebase');
-var config = {
-   apiKey: "AIzaSyAxrPcbdTtSnYehny6U70o48yjWA1dJnj8",
-   authDomain: "newbie-guide.firebaseapp.com",
-   databaseURL: "https://newbie-guide.firebaseio.com",
-   projectId: "newbie-guide",
-   storageBucket: "newbie-guide.appspot.com",
-   messagingSenderId: "29361991025"
- };
-var fire=firebase.initializeApp(config);
+var configvalues = require('./database');
 
-module.exports=fire;
+module.exports = {
+
+    databaseurluser :function() {
+        return "mongodb://"+configvalues.uname + ":" + configvalues.upwd + "@ds219130.mlab.com:19130/newbie-guide";
+    }
+
+
+}
