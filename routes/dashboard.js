@@ -1,10 +1,10 @@
 module.exports = function(app) {
         app.get('/dashboard',(req,res)=>{
 
-                if(req.user.isTeacher){
+                if(req.user.isTeacher || null){
                   res.redirect('/dashboard/teacher');
                 }
-                else if (req.user.isAdmin) {
+                else if (req.user.isAdmin || null) {
                     res.redirect('/dashboard/admin');
                 }
                 else{

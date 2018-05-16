@@ -2,6 +2,7 @@ var express = require('express');
 var exphbs = require('express-handlebars');
 var pages= require('./routes/pages');
 var login= require('./routes/login');
+var adminroute= require('./routes/admin');
 var dashboard= require('./routes/dashboard');
 var database= require('./database/connect');
 var methodOverride = require('method-override');
@@ -10,7 +11,7 @@ var session = require('express-session');
 var flash = require('connect-flash');
 var passport = require('passport');
 var pasportConfig= require('./config/passport');
-const {admin}=require('./helpers/hbs');
+const {admin,formatdate}=require('./helpers/hbs');
 var app=express();
 
 
@@ -18,7 +19,8 @@ var port= process.env.PORT ||3000;
 app.use('/assests',express.static(__dirname +'/public'));
 
 app.engine('handlebars', exphbs({helpers:{
-	admin:admin
+	admin:admin,
+	formatdate:formatdate
 },defaultLayout: 'main'}));
 app.set('view engine', 'handlebars');
 
@@ -80,6 +82,11 @@ dashboard(app);
 login(app,passport);
 //to config our local Strategy with the login
 pasportConfig(passport);
+
+//show all admin related routes
+
+adminroute(app);
+
 
 database.databaseconnectionusers();
 

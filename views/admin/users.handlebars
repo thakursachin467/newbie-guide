@@ -1,0 +1,56 @@
+<div class="container">
+  <div class="row">
+    <div class="col s12 ">
+      <nav>
+      <div class="nav-wrapper indigo darken-2">
+        <a style="margin-left: 20px;" class="breadcrumb" >{{userid.firstname}} {{userid.lastname}}</a>
+        <a class="breadcrumb" href="/dashboard">Dashboard</a>
+        <a class="breadcrumb" >Recent Users</a>
+              <a class="right " style="margin-right: 20px;" href="/users/all"><i class="fa fa-refresh" style="font-size:26px;">Refresh</i> </a>
+      </div>
+    </nav>
+    </div>
+  </div>
+<h4>Recent Users</h4>
+
+{{#if data}}
+<div class="mb">
+      <table class="striped">
+
+          <thead>
+            <th>
+              Name
+            </th>
+            <th>
+              email
+            </th>
+            <th>
+              Date Joined
+            </th>
+            <th>
+              Role
+            </th>
+
+          </thead>
+          <tbody>
+            {{#each data}}
+                <tr>
+                  <td>  {{firstname}} {{lastname}} </td>
+                  <td> <span class="status">{{email}}</span> </td>
+                  <td>{{formatdate date 'MMMM Do YYYY'}}</td>
+                  <td>{{#if isAdmin}}Admin {{else if isTeacher}}Teacher {{else}} Student {{/if}}</td>
+
+                </tr>
+            {{/each}}
+          </tbody>
+
+
+      </table>
+      </div>
+
+
+{{else}}
+<p>No One has Registered Yet</p>
+
+{{/if}}
+</div>

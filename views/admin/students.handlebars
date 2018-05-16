@@ -1,0 +1,66 @@
+<div class="container">
+  <div class="row">
+    <div class="col s12 ">
+      <nav>
+      <div class="nav-wrapper indigo darken-2">
+        <a style="margin-left: 20px;" class="breadcrumb" >{{userid.firstname}} {{userid.lastname}}</a>
+        <a class="breadcrumb" href="/dashboard">Dashboard</a>
+        <a class="breadcrumb" >Students</a>
+
+
+
+
+              <a class="right " style="margin-right: 20px;" href="/users/students"><i class="fa fa-refresh" style="font-size:26px;">Refresh</i> </a>
+
+
+      </div>
+    </nav>
+    </div>
+  </div>
+<h4>All Students</h4>
+
+{{#if data}}
+<div class="mb">
+      <table class="striped">
+
+          <thead>
+            <th>
+              Name
+            </th>
+            <th>
+              email
+            </th>
+            <th>
+              Date Joined
+            </th>
+            <th>
+
+            </th>
+          </thead>
+          <tbody>
+            {{#each data}}
+                <tr>
+                  <td>  {{firstname}} {{lastname}} </td>
+                  <td> <span class="status">{{email}}</span> </td>
+                  <td>{{formatdate date 'MMMM Do YYYY'}}</td>
+                  <td>
+                    <form action="/users/{{_id}}?_method=DELETE" method="post" id="delete-form">
+                      <input type="hidden" name="_method" value="DELETE">
+                      <button type="submit" name="button" class="btn red"><i class="fa fa-remove"></i>Delete</button>
+                    </form>
+
+                 </td>
+                </tr>
+            {{/each}}
+          </tbody>
+
+
+      </table>
+      </div>
+
+
+{{else}}
+<p>No students have Registered Yet</p>
+
+{{/if}}
+</div>

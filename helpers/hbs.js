@@ -1,3 +1,4 @@
+var moment= require('moment');
 module.exports =  {
         admin: function(userid) {
             if(userid==null){
@@ -11,5 +12,11 @@ module.exports =  {
               return true;
             }
           }
+        },
+        formatdate:function(date,format) {
+              return moment(date).utcOffset("+05:30").format(format);
+              //var local = moment(stillUtc).local().format(format);
+              //return moment(date).format(format);
+              //return local;
         }
 }
