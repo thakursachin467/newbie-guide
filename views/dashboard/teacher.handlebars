@@ -8,7 +8,7 @@
 
 
 
-            <a class="right " style="margin-right: 20px;" href="/dashboard/admin"><i class="fa fa-refresh" style="font-size:26px;">Refresh</i> </a>
+            <a class="right " style="margin-right: 20px;" href="/dashboard/teacher"><i class="fa fa-refresh" style="font-size:26px;">Refresh</i> </a>
 
 
     </div>
@@ -30,27 +30,26 @@
 </li>
         <ul class="collapsible" data-collapsible="accordion">
           <li id="dash_users">
-            <div id="dash_users_header" class="collapsible-header waves-effect"><b>Users</b></div>
+            <div id="dash_users_header" class="collapsible-header waves-effect"><b>Personal Info</b></div>
             <div id="dash_users_body" class="collapsible-body">
               <ul>
                 <div class="collection">
-                    <a href="#!"  class="collection-item waves-effect" id="users_seller">Students</a>
-                    <a href="#!" class="collection-item  waves-effect" id="users_customer">Teachers</a>
-                    <a href="#" class="collection-item  waves-effect" id="users_customer">All Users</a>
-
+                    <a   class="collection-item waves-effect" id="users_seller">{{userid.firstname}} {{userid.lastname}}</a>
+                    <a  class="collection-item  waves-effect" id="users_customer">{{userid.email}}</a>
+                    <a href="/teacher/info/{{userid._id}}" class="collection-item  waves-effect">Edit Info</a>
                 </div>
               </ul>
             </div>
           </li>
 
           <li id="dash_products">
-            <div id="dash_products_header" class="collapsible-header waves-effect"><b>Location</b></div>
+            <div id="dash_products_header" class="collapsible-header waves-effect"><b>Find Location</b></div>
             <div id="dash_products_body" class="collapsible-body">
               <ul>
 
                 <div class="collection">
-                    <a href="#!"  class="collection-item waves-effect" id="users_seller">Add</a>
-                    <a href="#!" class="collection-item  waves-effect" id="users_customer">Edit</a>
+                    <a href="/maps"  class="collection-item waves-effect" id="users_seller">Find</a>
+
 
                 </div>
 
@@ -63,7 +62,7 @@
             <div id="dash_categories_body" class="collapsible-body">
               <ul>
                 <div class="collection">
-                    <a href="#!"  class="collection-item waves-effect " id="users_seller">Show All</a>
+                    <a href="/complain"  class="collection-item waves-effect " id="users_seller">Click here</a>
 
                 </div>
               </ul>
@@ -75,7 +74,7 @@
             <div id="dash_categories_body" class="collapsible-body">
               <ul>
                 <div class="collection">
-                    <a href="#!"  class="collection-item waves-effect" id="users_seller">Add</a>
+                    <a href="#!"  class="collection-item waves-effect" id="users_seller">Go</a>
 
                 </div>
               </ul>
@@ -97,24 +96,24 @@
     <div style="padding: 35px;" align="center" class="card">
       <div class="row">
         <div class="left card-title">
-          <b>User Management</b>
+          <b>Personal Info</b>
         </div>
       </div>
 
       <div class="row">
-        <a href="#!">
+        <a href="/teacher/info">
           <div style="padding: 30px;" class="grey lighten-3 col s5 waves-effect">
-            <i class="indigo-text text-lighten-1 large material-icons">person</i>
-            <span class="indigo-text text-lighten-1"><h5>Teacher</h5></span>
+            <i class="indigo-text text-lighten-1 large material-icons">note_add</i>
+            <span class="indigo-text text-lighten-1"><h5>Add</h5></span>
           </div>
         </a>
         <div class="col s1">&nbsp;</div>
         <div class="col s1">&nbsp;</div>
 
-        <a href="#!">
+        <a href="/teacher/info/{{userid._id}}">
           <div style="padding: 30px;" class="grey lighten-3 col s5 waves-effect">
-            <i class="indigo-text text-lighten-1 large material-icons">people</i>
-            <span class="indigo-text text-lighten-1"><h5>Students</h5></span>
+            <i class="indigo-text text-lighten-1 large material-icons">update</i>
+            <span class="indigo-text text-lighten-1"><h5>Update</h5></span>
           </div>
         </a>
       </div>
@@ -125,63 +124,26 @@
     <div style="padding: 35px;" align="center" class="card">
       <div class="row">
         <div class="left card-title">
-          <b>Complain Management</b>
+          <b>Time table Management</b>
         </div>
       </div>
       <div class="row">
-        <a href="#!">
+        <a href="/timetable/add">
           <div style="padding: 30px;" class="grey lighten-3 col s5 waves-effect">
-            <i class="indigo-text text-lighten-1 large material-icons">assignment</i>
-            <span class="indigo-text text-lighten-1"><h5>Complains</h5></span>
+            <i class="indigo-text text-lighten-1 large material-icons">note_add</i>
+            <span class="indigo-text text-lighten-1"><h5>Add</h5></span>
           </div>
         </a>
 
         <div class="col s1">&nbsp;</div>
         <div class="col s1">&nbsp;</div>
 
-        <a href="#!">
-          <div style="padding: 30px;" class="grey lighten-3 col s5 waves-effect">
-            <i class="indigo-text text-lighten-1 large material-icons">view_list</i>
-            <span class="indigo-text text-lighten-1"><h5>Catagories</h5></span>
-          </div>
-        </a>
       </div>
     </div>
   </div>
 </div>
 
-<div class="row">
-  <div class="col s6 highlight">
-    <div style="padding: 35px;" align="center" class="card">
-      <div class="row">
-        <div class="left card-title">
-          <b>Location Management</b>
-        </div>
-      </div>
 
-      <div class="row">
-        <a href="#!">
-          <div style="padding: 30px;" class="grey lighten-3 col s5 waves-effect">
-            <i class="indigo-text text-lighten-1 large material-icons">local_offer</i>
-            <span class="indigo-text text-lighten-1"><h5>Add </h5></span>
-          </div>
-        </a>
-
-        <div class="col s1">&nbsp;</div>
-        <div class="col s1">&nbsp;</div>
-
-        <a href="#!">
-          <div style="padding: 30px;" class="grey lighten-3 col s5 waves-effect">
-            <i class="indigo-text text-lighten-1 large material-icons">loyalty</i>
-            <span class="indigo-text text-lighten-1"><h5>Show All</h5></span>
-          </div>
-        </a>
-      </div>
-    </div>
-  </div>
-
-
-</div>
 
 
 </main>

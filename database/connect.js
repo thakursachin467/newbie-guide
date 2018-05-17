@@ -1,10 +1,11 @@
 var databaseinfo = require('../config/config');
 var mongoose = require('mongoose');
 
+
 module.exports = {
   databaseconnectionusers:function(){
   var url = databaseinfo.databaseurluser();
-  mongoose.connect(url)
+mongoose.connect(url)
   .then(()=>{
     console.log("database connected");
   })
@@ -12,7 +13,12 @@ module.exports = {
 
     console.log("error");
   });
+
+
+
+
 }
+
 
 
 

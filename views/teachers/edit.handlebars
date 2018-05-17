@@ -1,0 +1,62 @@
+<div class="row">
+  <div class="col s12 ">
+    <nav>
+    <div class="nav-wrapper indigo darken-2">
+      <a style="margin-left: 20px;" class="breadcrumb" >{{userid.firstname}} {{userid.lastname}}</a>
+      <a class="breadcrumb" href="/dashboard">Dashboard</a>
+      <a class="breadcrumb" >Edit Info</a>
+
+
+
+
+            <a class="right " style="margin-right: 20px;" href="/teacher/info/{{userid._id}}"><i class="fa fa-refresh" style="font-size:26px;">Refresh</i> </a>
+
+
+    </div>
+  </nav>
+  </div>
+</div>
+<div class="row" >
+  <div class="col s3">
+
+  </div>
+  <form class="col s6" action="/teachers/update/{{userid._id}}" method="post">
+    <div class="row">
+      <div class="input-field col s6">
+        <input placeholder="firstname" name="firstname" id="title" type="text" value="{{data.firstname}}" class="validate" required>
+        <label for="title">firstname</label>
+      </div>
+      <div class="input-field col s6">
+        <input placeholder="lastname" name="lastname" id="title" type="text" value="{{data.lastname}}" class="validate" required>
+        <label for="title">lastname</label>
+      </div>
+    </div>
+
+    <div class="row">
+      <div class="input-field col s6">
+        <input placeholder="What is your branch?" name="branch" value="{{data.branch}}" type="text" class="validate" required>
+        <label for="organizer">Branch</label>
+      </div>
+      <div class="input-field col s6">
+        <input placeholder="What is your sitting e.g tg-201?" name="staffroom" value="{{data.staffroom}}" type="text" class="validate" required>
+        <label for="organizer">Staffroom Number</label>
+      </div>
+    </div>
+    <div class="row">
+      <div class="input-field col s6">
+        <input placeholder="0912378911" name="phonenumber" value="{{data.phonenumber}}" type="text" class="validate" required>
+        <label for="website">Phone Number</label>
+      </div>
+      <div class="input-field col s6">
+        <input placeholder="contact@myweb.com" id="email" value="{{data.email}}" name="email" type="text" class="validate" required>
+        <label for="email">Contact email</label>
+      </div>
+    </div>
+
+    <div class="row">
+          <div class="input-field center col s12">
+            <button type="submit" class="btn" name="button"> Update Info </button>
+          </div>
+        </div>
+  </form>
+</div>

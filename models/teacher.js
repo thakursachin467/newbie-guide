@@ -15,7 +15,7 @@ var teacherSchema = new Schema ({
     type:String
   },
   staffroom:{
-      type: Number,
+      type: String,
       require:true
 },
 phonenumber :{
@@ -29,6 +29,9 @@ branch :{
 user: {
   type: String,
 
+},
+timetable:{
+  type: String
 }
 
 });

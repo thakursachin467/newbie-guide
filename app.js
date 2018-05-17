@@ -3,6 +3,8 @@ var exphbs = require('express-handlebars');
 var pages= require('./routes/pages');
 var login= require('./routes/login');
 var infopost= require('./routes/infopost');
+var uploads= require('./routes/upload');
+var timetable= require('./routes/timetables');
 var adminroute= require('./routes/admin');
 var dashboard= require('./routes/dashboard');
 var database= require('./database/connect');
@@ -97,6 +99,12 @@ adminroute(app);
 //post something by user teacher or admin
 infopost(app);
 
+//here all file related actions are performed
+uploads(app);
+timetable(app);
 database.databaseconnectionusers();
+
+
+
 
 app.listen(port);

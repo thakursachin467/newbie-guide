@@ -39,4 +39,9 @@ module.exports = function(app) {
           res.render('pages/location');
     });
 
+    app.get('/teacher/info',(req,res)=>{
+      res.render('teachers/add');
+    })
+
+    
 }
