@@ -43,5 +43,9 @@ module.exports = function(app) {
       res.render('teachers/add');
     })
 
-    
+    app.get('/info/add',(req,res)=>{
+        res.render('admin/info');
+    });
+  
+
 }

@@ -50,5 +50,30 @@ app.post('/upload/timetable',upload.single('FileUpload'),(req,res)=>{
             res.redirect('/dashboard/teacher');
         })
 
-})
+});
+
+//find a perticular image
+app.get('/timetable/show/:id',(req,res)=>{
+      gfs.files.findOne({filename:req.params.id},(err,file)=>{
+        if(!file || file.length==0) {
+          res.status(404).json({
+            err:'No images found'
+          });
+        }
+
+        //res.json(file.uploadDate);
+        if(file.contentType=="image/jpeg" || file.contentType=="img/png" ) {
+          //read the output stream
+          var readstream = gfs.createReadStream(file.filename);
+          readstream.pipe(res);
+        }
+        else {
+          res.status(404).json({
+            err:'Not an images '
+          });
+        }
+      })
+});
+
+
 }

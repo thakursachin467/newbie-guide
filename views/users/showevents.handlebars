@@ -1,0 +1,206 @@
+<style media="screen">
+@import url("https://fonts.googleapis.com/css?family=Pacifico");
+
+body {
+background-color: #f0f0f0;
+}
+h4, h5 {s
+font-family: 'Pacifico', cursive;
+}
+
+h4 {
+color : #40a8a7;
+/* Turquesa oscuro: color : #0D8080;*/
+}
+
+h5 {
+/*color : #40a8a7;*/
+color : #FF9900;
+}
+
+nav .nav-wrapper form, nav .nav-wrapper form .input-field{
+height: 100%;
+}
+
+.card-info, .card__meta a {
+  color: #3299BB !important;
+  display: inline-flex;
+  vertical-align: middle;
+  line-height: 2;
+  font-size: 1rem;
+}
+.card__meta i.small {
+  font-size: 1.5rem;
+}
+.card .card-content .card-title {
+  line-height: 34px;
+}
+.card__date {
+  background: #08c;
+  position: absolute;
+  top: 6px;
+  right: 6px;
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  color: #fff;
+  text-align: center;
+  line-height: 13px;
+  font-weight: bold;
+  padding-top: 7px;
+}
+.card__date__day {
+display: block;
+font-size: 14px;
+}
+.card__date__month {
+display: block;
+font-size: 10px;
+text-transform: uppercase;
+}
+
+.card .card-content .card-title {
+  color: #0D8080 !important;
+  line-height: 18px;
+}
+
+.card .card-title {
+
+  font-size: 18px;
+  font-weight: 400;
+}
+
+.card .card-content p{
+color: #1E1E1E;
+font-size: 13px;
+}
+
+.collapsible{
+background: #fff;
+}
+
+.card-row {
+margin-bottom: 4px;
+  margin-top: 4px;
+}
+.card-action i {
+  vertical-align: text-bottom;
+  font-size: 21px;
+}
+
+
+
+.collapsible-header {
+  background-color: #3299BB;
+  color: #fff;
+}
+
+.filter-container ul {
+  padding: 1rem 2rem;
+}
+
+.filter-container ul li {
+  display: block;
+  padding: 16px 0 0;
+}
+
+.search-title-filter {
+background-color: #3299BB;
+color: #fff;
+}
+
+nav  {
+  background-color: #40a8a7;
+  border-color: #E7E7E7;
+
+}
+
+nav ul>li>a, nav .brand-logo  {
+color: #fff;
+}
+
+nav .brand-logo {
+font-size: 1.4em !important;
+}
+
+#container {
+padding: 20px 10px;
+}
+
+</style>
+
+
+<div id="container" >
+  <div class="row">
+    <div class="col s12 m12 l3">
+      <nav class="search-title-filter">
+        <div class="nav-wrapper">
+          <form>
+            <div class="input-field">
+              <input id="search" name="search" type="search">
+              <label for="search"><i class="material-icons">search</i></label>
+            </div>
+          </form>
+        </div>
+      </nav>
+      <ul class="collapsible" data-collapsible="expandable">
+        <li>
+          <a href="/events/show" class="collapsible-header active"><i class="material-icons">label</i>Events</a>
+        </li>
+        <li class="">
+          <div class="collapsible-header active"><i class="material-icons">event_note</i>Notice</div>
+          <div class="collapsible-body filter-container" style="display: none; padding-top: 0px; margin-top: 0px; padding-bottom: 0px; margin-bottom: 0px;">
+
+          </div>
+        </li>
+
+
+      </ul>
+
+    </div>
+
+
+    <div class="col s12 m12 l9"  >
+
+
+        {{#if data}}
+        <h4>All events</h4>
+      {{#each data}}
+      <div id="card-container" class="row">
+
+        <div class="col s12 m6 l4">
+          <div class="card">
+            <div class="card-content white-text">
+              <span class="card-title grey-text text-darken-4">{{name}}</span>
+
+              <p class="card-subtitle grey-text text-darken-2">{{description}}</p>
+              <div class="row card-row">
+                <span class="text-darken-2 card-info"><i class="small material-icons">label</i>&nbsp;{{organizer}}</span>
+              </div>
+              <div class="row card-row">
+                <span class="text-darken-2 card-info"><i class="small material-icons">place</i>&nbsp;{{venue}}</span>
+              </div>
+              <div class="row card-row">
+                <span class="text-darken-2 card-info"><i class="small material-icons">event</i>&nbsp;{{date}}</span>
+              </div>
+              <div class="row card-row">
+                <span class="text-darken-2 card-info"><i class="small material-icons">schedule</i>&nbsp;{{time}}</span>
+              </div>
+            </div>
+            <div class="card-action">
+              <a href="{{register}}" target="_blank"><i class="material-icons">&nbsp;language</i>Register</a>
+              <a  href="mailto:{{email}}" class="card-action-right"><i class="material-icons">&nbsp; contact_mail</i> Contact</a>
+            </div>
+          </div>
+
+        </div>
+        {{/each}}
+        {{else}}
+          <h4>No Data Found for {{query}}</h4>
+
+        {{/if}}
+        </div>
+
+      </div>
+    </div>
+  </div>

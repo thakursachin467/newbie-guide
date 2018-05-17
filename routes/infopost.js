@@ -1,6 +1,7 @@
 var complains= require('../models/complain');
 var locations= require('../models/college');
-var teachers= require('../models/teacher')
+var teachers= require('../models/teacher');
+var events= require('../models/events');
 var mongoose= require('mongoose');
 
 
@@ -131,5 +132,85 @@ module.exports= function(app) {
       app.get('/timetable/add',(req,res)=>{
           res.render('teachers/timetable');
       });
+
+      app.post('/event',(req,res)=>{
+            console.log(req.body);
+            var meet= new events({
+              email:req.body.contact,
+              name:req.body.title,
+              organizer:req.body.organizer,
+              description:req.body.description,
+              register:req.body.register,
+              time:req.body.time,
+              date:req.body.date,
+              venue:req.body.venue
+            })
+            meet.save()
+            .then(()=>{
+              res.redirect('/dashboard/admin');
+            })
+      });
+
+
+      app.get('/events/show',(req,res)=>{
+        if(req.query.search){
+          const regex = new RegExp(escapeRegex(req.query.search), 'gi');
+            events.find({name:regex})
+            .then((data)=>{
+              res.render('users/showevents',{
+                data:data,
+                query:req.query.search
+              })
+            })
+        }
+        else{
+        events.find({})
+        .then((data)=>{
+          res.render('users/showevents',{
+            data:data,
+            query:'Events'
+          })
+        })
+}
+      });
+
+      app.get('/teacher/show',(req,res)=>{
+        if(req.query.search){
+          const regex = new RegExp(escapeRegex(req.query.search), 'gi');
+            teachers.find({firstname:regex})
+            .then((data)=>{
+              res.render('users/showteacher',{
+                data:data,
+                query:req.query.search
+              })
+            })
+        }
+        else if (req.query.branch) {
+          const regex = new RegExp(escapeRegex(req.query.branch), 'gi');
+            teachers.find({branch:regex})
+            .then((data)=>{
+              res.render('users/showteacher',{
+                data:data,
+                query:req.query.branch,
+                input: req.query.branch
+              })
+            })
+        }
+        else{
+        teachers.find({})
+        .then((data)=>{
+          res.render('users/showteacher',{
+            data:data,
+            query:'Teachers',
+            input: ''
+          })
+        })
+}
+      });
+
+
+      function escapeRegex(text) {
+    return text.replace(/[-[\]{}()*+?.,\\^$|#\s]/g, "\\$&");
+};
 
 }

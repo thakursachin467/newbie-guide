@@ -18,5 +18,13 @@ module.exports =  {
               //var local = moment(stillUtc).local().format(format);
               //return moment(date).format(format);
               //return local;
+        },
+        check: function(text) {
+          if(text===''){
+            return false;
+          }
+          else {
+            return true;
+          }
         }
 }

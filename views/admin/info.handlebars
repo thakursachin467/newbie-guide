@@ -1,0 +1,76 @@
+<div class="row">
+  <div class="col s12 ">
+    <nav>
+    <div class="nav-wrapper indigo darken-2">
+      <a style="margin-left: 20px;" class="breadcrumb" >{{userid.firstname}} {{userid.lastname}}</a>
+      <a class="breadcrumb" href="/dashboard">Dashboard</a>
+      <a class="breadcrumb" >Events</a>
+
+
+
+
+            <a class="right " style="margin-right: 20px;" href="/info/add"><i class="fa fa-refresh" style="font-size:26px;">Refresh</i> </a>
+
+
+    </div>
+  </nav>
+  </div>
+</div>
+
+<div class="row">
+  <div class="col s3">
+
+  </div>
+  <form class="col s6" method="post" action="/event">
+    <div class="row">
+      <div class="input-field col s12">
+        <input placeholder="Event title" id="title" name="title" type="text" class="validate" required>
+        <label for="title">Title</label>
+      </div>
+    </div>
+    <div class="row">
+      <div class="input-field col s12">
+        <input placeholder="Event venue" id="title" name="venue" type="text" class="validate" required>
+        <label for="title">Venue</label>
+      </div>
+    </div>
+
+    <div class="row">
+      <div class="input-field col s6">
+
+        <input type="date" id="date" name="date" class="datepicker" required>
+      </div>
+      <div class="input-field col s6">
+
+        <input type="time" id="time" name="time" class="timepicker" required>
+      </div>
+    </div>
+    <div class="row">
+      <div class="input-field col s12">
+        <label for="organizer">Organizer</label>
+        <input placeholder="Who is organizing the event?" name="organizer" id="organizer" type="text" class="validate" required>
+      </div>
+    </div>
+    <div class="row">
+      <div class="input-field col s6">
+        <label for="website">Register form(if any)</label>
+        <input placeholder="http://www.formname.com" id="website" name="register" type="text" class="validate" >
+
+      </div>
+      <div class="input-field col s6">
+        <label for="email">Contact email</label>
+        <input placeholder="contact@myweb.com" id="email" type="text" name="contact" class="validate" required>
+
+      </div>
+    </div>
+
+    <div class="row">
+          <div class="input-field col s12">
+            <textarea id="description" class="materialize-textarea" length="140" name="description" required></textarea>
+            <label for="description">Describe the event!</label>
+          </div>
+        </div>
+        <button id="submit" class="btn waves-effect waves-light right" type="submit" >Submit
+  </button>
+  </form>
+</div>
