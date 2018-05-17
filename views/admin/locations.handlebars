@@ -1,0 +1,66 @@
+<div class="container">
+  <div class="row">
+    <div class="col s12 ">
+      <nav>
+      <div class="nav-wrapper indigo darken-2">
+        <a style="margin-left: 20px;" class="breadcrumb" >{{userid.firstname}} {{userid.lastname}}</a>
+        <a class="breadcrumb" href="/dashboard">Dashboard</a>
+        <a class="breadcrumb" >Locations</a>
+
+
+
+
+              <a class="right " style="margin-right: 20px;" href="/locations"><i class="fa fa-refresh" style="font-size:26px;">Refresh</i> </a>
+
+
+      </div>
+    </nav>
+    </div>
+  </div>
+<h4>All Locations</h4>
+
+{{#if data}}
+<div class="mb">
+      <table class="striped">
+
+          <thead>
+            <th>
+              Name
+            </th>
+            <th>
+              location
+            </th>
+            <th>
+              Date last updated
+            </th>
+            <th>
+
+            </th>
+
+          </thead>
+          <tbody>
+            {{#each data}}
+                <tr>
+                  <td>  {{place}} </td>
+                  <td> <span class="status">{{location}} {{floor}}</span> </td>
+                  <td>{{formatdate date 'MMMM Do YYYY'}}</td>
+
+                  <td><a href="/locations/{{_id}}" class="btn left-align"><i class="fa fa-pencil"></i>edit</a>
+
+                    </td>
+
+
+                </tr>
+            {{/each}}
+          </tbody>
+
+
+      </table>
+      </div>
+
+
+{{else}}
+<p>No Locations found</p>
+
+{{/if}}
+</div>

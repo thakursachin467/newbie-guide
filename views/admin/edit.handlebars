@@ -1,0 +1,63 @@
+<div class="row ">
+  <div class="col s12 ">
+    <nav>
+    <div class="nav-wrapper indigo darken-2">
+      <a style="margin-left: 20px;" class="breadcrumb" >{{userid.firstname}} {{userid.lastname}}</a>
+      <a class="breadcrumb" href="/dashboard">Dashboard</a>
+      <a class="breadcrumb" >Locations edit</a>
+
+
+
+
+    <a class="right " style="margin-right: 20px;" href="/locations/{{data._id}}"><i class="fa fa-refresh" style="font-size:26px;">Refresh</i> </a>
+
+
+    </div>
+  </nav>
+  </div>
+</div>
+
+
+<div class="row" >
+  <div class="middle">
+
+  <div class="row">
+  	<div class="row middle-2">
+          <div class=" col s12">
+            <h1 align="center">Locations</h1>
+            <h4 class="center">Help Visitors Find out Locations easily</h4>
+          </div>
+        </div>
+      <form class="col s12" id="complainform" action="/locations/edit/{{data._id}}" method="post">
+        <div class="row">
+          <div class="input-field col s6">
+            <input  placeholder="Place Name" name="place" value="{{data.place}}" type="text" >
+
+          </div>
+          <div class="input-field col s6">
+            <input placeholder="Description"  name="description" value="{{data.description}}" type="text" >
+          </div>
+        </div>
+        <div class="row">
+          <div class="input-field col s12">
+            <input  type="text" placeholder="Location(Turing,tesla etc)" name="location" value="{{data.location}}" class="validate">
+          </div>
+        </div>
+        <div class="row">
+          <div class="input-field col s12">
+            <input  type="text" placeholder="Floor" name="floor" value="{{data.floor}}" class="validate">
+          </div>
+        </div>
+
+
+
+       <button class="btn waves-effect waves-light right" id="button-1"  type="submit" >Save Changes
+      <i class="material-icons right">add_location</i>
+    </button>
+      </form>
+    </div>
+    </div>
+
+
+
+</div>

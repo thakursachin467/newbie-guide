@@ -1,0 +1,47 @@
+<div class="row ">
+  <div class="col s12 ">
+    <nav>
+    <div class="nav-wrapper indigo darken-2">
+      <a style="margin-left: 20px;" class="breadcrumb" >{{userid.firstname}} {{userid.lastname}}</a>
+      <a class="breadcrumb" href="/dashboard">Dashboard</a>
+      <a class="breadcrumb" >Complains</a>
+
+
+
+
+            <a class="right " style="margin-right: 20px;" href="/complains/all"><i class="fa fa-refresh" style="font-size:26px;">Refresh</i> </a>
+
+
+    </div>
+  </nav>
+  </div>
+</div>
+
+
+<div class="row" >
+{{#each data}}
+<div class="col s12 m4" >
+<div class="card " >
+
+  <div class="card-content center-align">
+    <h5 class="story-title">Subject: {{subject}}</h5>
+    <p class="story-text">Complain: {{body}}</p>
+    <br>
+    <div class="chip">
+      <img src="https://image.flaticon.com/icons/svg/61/61205.svg">
+      <a class="tooltipped" data-position="bottom" data-delay="50" data-tooltip="{{email}}">{{firstname}} {{lastname}}</a>
+    </div>
+  </div>
+    <div class="card-action center-align " style="opacity:0.5;">
+    Submitted on: {{formatdate date 'MMMM Do YYYY'}}
+
+    </div>
+</div>
+</div>
+
+{{else}}
+<p>No Complain  found</p>
+{{/each}}
+
+
+</div>

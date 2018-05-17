@@ -11,6 +11,15 @@ var collegeSchema = new Schema ({
   },
   location:{
     type:String
+  },
+  floor : {
+    type: String,
+
+  },
+  date: {
+    type: Date,
+    default:Date.now(),
+    require:true
   }
 
 });

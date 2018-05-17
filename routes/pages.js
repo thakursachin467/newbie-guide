@@ -31,4 +31,12 @@ module.exports = function(app) {
             res.render('pages/contact');
     });
 
+    app.get('/complain',(req,res)=>{
+        res.render('pages/complain');
+    });
+
+    app.get('/locations/add',(req,res)=>{
+          res.render('pages/location');
+    });
+
 }

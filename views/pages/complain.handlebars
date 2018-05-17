@@ -4,7 +4,7 @@
 	<div class="row middle-2">
         <div class=" col s12">
           <h1 align="center">Complain Form</h1>
-          <h4>How can we help you today?</h4>
+          <h4 class="center">How can we help you today?</h4>
         </div>
       </div>
       <div class="alert">
@@ -26,6 +26,13 @@
           <input id="email" type="email" placeholder="Email" name="email" class="validate">
         </div>
       </div>
+			<div class="row">
+        <div class="input-field col s12">
+          <input id="text" type="text" placeholder="Subject" name="subject" class="validate">
+        </div>
+      </div>
+
+
       <div class="row">
         <div class="input-field col s12">
           <textarea id="textarea1" placeholder="input your complain here" name="complain" class="materialize-textarea"></textarea>
@@ -34,25 +41,9 @@
       </div>
 
 
-     <button class="btn waves-effect waves-light" id="button-1" type="submit" name="action">Submit
+     <button class="btn waves-effect waves-light right" id="button-1" type="submit" >Submit
     <i class="material-icons right">send</i>
   </button>
     </form>
   </div>
   </div>
-   <script type="text/javascript">
-           document.getElementById('button-1').addEventListener('click', submitform);
-           function submitform() {
-
-
-
-document.querySelector('.alert').style.display='block';
-
-
-setTimeout(function(){
-	document.querySelector('.alert').style.display='none';
-
-
-},3000);
-}
-   </script>

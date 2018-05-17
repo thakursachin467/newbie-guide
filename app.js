@@ -2,6 +2,7 @@ var express = require('express');
 var exphbs = require('express-handlebars');
 var pages= require('./routes/pages');
 var login= require('./routes/login');
+var infopost= require('./routes/infopost');
 var adminroute= require('./routes/admin');
 var dashboard= require('./routes/dashboard');
 var database= require('./database/connect');
@@ -24,14 +25,20 @@ app.engine('handlebars', exphbs({helpers:{
 },defaultLayout: 'main'}));
 app.set('view engine', 'handlebars');
 
+
+// parse application/x-www-form-urlencoded
+app.use(bodyParser.urlencoded({ extended: false }));
 // parse application/json
 app.use(bodyParser.json());
+
+
 
 //express sessions middleware
 app.use(session({
 	secret: 'keyboard$',
 	resave: true,
-	saveUninitialized: true
+	saveUninitialized: true,
+	cookie : {maxAge:180 * 60  * 1000}
 }));
 
 
@@ -87,6 +94,8 @@ pasportConfig(passport);
 
 adminroute(app);
 
+//post something by user teacher or admin
+infopost(app);
 
 database.databaseconnectionusers();
 

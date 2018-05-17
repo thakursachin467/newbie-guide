@@ -1,4 +1,6 @@
 var users= require('../models/user');
+var complains= require('../models/complain');
+var locations= require('../models/college');
 var mongoose= require('mongoose');
 module.exports= function(app) {
 
@@ -42,6 +44,38 @@ module.exports= function(app) {
               res.render('admin/users',{
                 data:data
               })
+            });
+        });
+
+        //show all complain by the users in admins account
+
+        app.get('/complains/all',(req,res)=>{
+              complains.find()
+              .then((data)=>{
+                  res.render('admin/complain',{
+                    data:data
+                  });
+              })
+
+        });
+        //show all locations here
+        app.get('/locations',(req,res)=>{
+              locations.find()
+              .then((data)=>{
+                res.render('admin/locations',{
+                  data:data
+                })
+              })
+        });
+
+        //edit a location
+        app.get('/locations/:id',(req,res)=>{
+            locations.findOne({_id:req.params.id})
+            .then((data)=>{
+              console.log(data);
+              res.render('admin/edit',{
+                data:data
+              });
             });
         });
 

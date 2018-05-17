@@ -13,16 +13,20 @@ var complainSchema = new Schema ({
     type:String
   },
   body:{
-      type: Number,
+      type: String,
       require:true
 },
-type :{
-  type: String,
-  require: true
+subject :{
+  type: String
 },
 user: {
   type: String
 
+},
+date:{
+  type: Date,
+  default: Date.now(),
+  require: true
 }
 
 });
