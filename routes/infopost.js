@@ -231,6 +231,41 @@ module.exports= function(app) {
 }
       });
 
+      app.get('/map',(req,res)=>{
+        if(req.query.search){
+          const regex = new RegExp(escapeRegex(req.query.search), 'gi');
+            locations.find({place:regex})
+            .then((data)=>{
+              res.render('users/collegemap',{
+                data:data,
+                query:req.query.search
+              })
+            })
+        }
+        else{
+        locations.find({})
+        .limit(5)
+        .then((data)=>{
+          res.render('users/collegemap',{
+            data:data,
+            query:'Location'
+          })
+        })
+}
+
+      });
+
+      app.get('/complain/my',(req,res)=>{
+            complains.find({user:req.user._id})
+            .sort({ _id: -1 })
+            .then((data)=>{
+                res.render('users/mycomplain',{
+                  data:data
+                });
+            });
+
+      });
+
 
       function escapeRegex(text) {
     return text.replace(/[-[\]{}()*+?.,\\^$|#\s]/g, "\\$&");
