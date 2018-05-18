@@ -28,6 +28,9 @@
               Date Joined
             </th>
             <th>
+              Time Of joining
+            </th>
+            <th>
               Role
             </th>
 
@@ -38,6 +41,7 @@
                   <td>  {{firstname}} {{lastname}} </td>
                   <td> <span class="status">{{email}}</span> </td>
                   <td>{{formatdate date 'MMMM Do YYYY'}}</td>
+                  <td>{{formattime date "hh:mm:ss a"}}</td>
                   <td>{{#if isAdmin}}Admin {{else if isTeacher}}Teacher {{else}} Student {{/if}}</td>
 
                 </tr>

@@ -9,7 +9,11 @@
         </div>
 
       </ul>
+      {{#if userid}}
+      <li><a href="/dashboard"><i class="fa fa-dashboard"></i> Dashboard</a></li>
+      {{else}}
 
+      {{/if}}
   <li><a href="/quicklinks/aboutus"><i class="fa fa-info"></i>About</a></li>
     <li><a href="/quicklinks/admissions"><i class="fa fa-graduation-cap"></i>Admissions</a></li>
     <li><a href="/quicklinks/facilities"><i class="fa fa-user"></i>Facilities </a></li>
