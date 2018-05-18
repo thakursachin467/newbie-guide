@@ -133,7 +133,7 @@ module.exports= function(app) {
           res.render('teachers/timetable');
       });
 
-      app.post('/event',(req,res)=>{
+      app.post('/event',ensureAuthenticated,(req,res)=>{
             console.log(req.body);
             var meet= new events({
               email:req.body.contact,
@@ -174,7 +174,7 @@ module.exports= function(app) {
 }
       });
 
-      app.get('/user/locations',(req,res)=>{
+      app.get('/user/locations',ensureAuthenticated,(req,res)=>{
         if(req.query.search){
           const regex = new RegExp(escapeRegex(req.query.search), 'gi');
             locations.find({place:regex})
@@ -255,7 +255,7 @@ module.exports= function(app) {
 
       });
 
-      app.get('/complain/my',(req,res)=>{
+      app.get('/complain/my',ensureAuthenticated,(req,res)=>{
             complains.find({user:req.user._id})
             .sort({ _id: -1 })
             .then((data)=>{
