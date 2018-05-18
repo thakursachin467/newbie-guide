@@ -28,9 +28,17 @@ module.exports =  {
           }
         },
         formattime:function(date,format) {
-              return moment(date).utcOffset("+06:30").format(format);
+              return moment(date).utcOffset("+05:30").format(format);
               //var local = moment(stillUtc).local().format(format);
               //return moment(date).format(format);
               //return local;
+        },
+        timetablecheck: function(filename) {
+          if(filename== undefined) {
+            return false;
+          }
+          else {
+            return true;
+          }
         }
 }

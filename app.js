@@ -14,7 +14,7 @@ var session = require('express-session');
 var flash = require('connect-flash');
 var passport = require('passport');
 var pasportConfig= require('./config/passport');
-const {admin,formatdate,check,formattime}=require('./helpers/hbs');
+const {admin,formatdate,check,formattime,timetablecheck}=require('./helpers/hbs');
 var app=express();
 
 
@@ -25,7 +25,8 @@ app.engine('handlebars', exphbs({helpers:{
 	admin:admin,
 	formatdate:formatdate,
 	check:check,
-	formattime:formattime
+	formattime:formattime,
+	timetablecheck:timetablecheck
 },defaultLayout: 'main'}));
 app.set('view engine', 'handlebars');
 

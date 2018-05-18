@@ -21,7 +21,10 @@ color : #FF9900;
 nav .nav-wrapper form, nav .nav-wrapper form .input-field{
 height: 100%;
 }
-
+.card{
+    height: 200px; /* Your height here */
+    overflow: hidden;
+}
 .card-info, .card__meta a {
   color: #3299BB !important;
   display: inline-flex;
@@ -79,10 +82,7 @@ font-size: 13px;
 background: #fff;
 }
 
-.card-row {
-margin-bottom: 4px;
-  margin-top: 4px;
-}
+
 .card-action i {
   vertical-align: text-bottom;
   font-size: 21px;
@@ -160,15 +160,14 @@ padding: 20px 10px;
     </div>
 
 
-    <div class="col s12 m12 l9"  >
+    <div class="col s12 m12 l9">
 
 
         {{#if data}}
         <h4>All Locations</h4>
+        <div id="card-container" class="row">
       {{#each data}}
-      <div id="card-container" class="row">
-
-        <div class="col s12 m6 l4">
+        <div class="col s12 m4 l3">
           <div class="card">
             <div class="card-content white-text">
               <span class="card-title grey-text text-darken-4">{{place}}</span>

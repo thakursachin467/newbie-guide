@@ -28,24 +28,24 @@
             <h4 class="center">Help Visitors Find out Locations easily</h4>
           </div>
         </div>
-      <form class="col s12" id="complainform" action="/locations" method="post">
+      <form class="col s12" id="complainform" action="/locations" method="post" >
         <div class="row">
           <div class="input-field col s6">
-            <input  placeholder="Place Name" name="place" type="text" >
+            <input  placeholder="Place Name" name="place" type="text" required >
 
           </div>
           <div class="input-field col s6">
-            <input placeholder="Description"  name="description" type="text" >
+            <input placeholder="Description"  name="description" type="text"required >
           </div>
         </div>
         <div class="row">
           <div class="input-field col s12">
-            <input  type="text" placeholder="Location(Turing,tesla etc)" name="location" class="validate">
+            <input  type="text" placeholder="Location(Turing,tesla etc)" name="location" class="validate" required>
           </div>
         </div>
         <div class="row">
           <div class="input-field col s12">
-            <input  type="text" placeholder="Floor" name="floor" class="validate">
+            <input  type="text" placeholder="Floor" name="floor" class="validate" required>
           </div>
         </div>
 

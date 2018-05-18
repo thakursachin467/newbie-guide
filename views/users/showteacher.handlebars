@@ -173,7 +173,7 @@ padding: 20px 10px;
         </li>
         <li>
 
-          <a href="/teacher/show" class="collapsible-header active"><i class="material-icons">label</i>Teachers</a>
+          <a href="/teacher/show" class="collapsible-header active"><i class="material-icons">label</i>Show all Teachers</a>
         </li>
 
 
@@ -209,8 +209,11 @@ padding: 20px 10px;
               </div>
             </div>
             <div class="card-action">
-
+              {{#if (timetablecheck timetable)}}
               <a  href="/timetable/show/{{timetable}}" target="_blank" class="card-action-right"><i class="material-icons">&nbsp; timeline</i> Timetable</a>
+              {{else}}
+                  <span  class="card-action-right"><i class="material-icons">&nbsp; timeline</i> Teacher has not uploaded timetable</span>
+              {{/if}}
             </div>
           </div>
 
