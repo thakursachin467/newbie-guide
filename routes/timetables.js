@@ -6,7 +6,7 @@ var path= require('path');
 var multer = require('multer');
 var teachers= require('../models/teacher');
 var GridFsStorage= require('multer-gridfs-storage');
-
+var {ensureAuthenticated,ensureAdmin,ensureTeacher}= require('../helpers/auth');
 module.exports= function(app) {
 
   var url = databaseinfo.databaseurluser();
@@ -41,7 +41,7 @@ const storage = new GridFsStorage({
 const upload = multer({ storage });
 
 
-app.post('/upload/timetable',upload.single('FileUpload'),(req,res)=>{
+app.post('/upload/timetable',upload.single('FileUpload'),ensureTeacher,(req,res)=>{
 
       //res.json({file:req.file});
         console.log(req.file);

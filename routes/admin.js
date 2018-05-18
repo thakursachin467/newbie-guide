@@ -2,10 +2,11 @@ var users= require('../models/user');
 var complains= require('../models/complain');
 var locations= require('../models/college');
 var mongoose= require('mongoose');
+var {ensureAuthenticated,ensureAdmin,ensureTeacher}= require('../helpers/auth');
 module.exports= function(app) {
 
         //get all the students info from our database
-        app.get('/users/students',(req,res)=>{
+        app.get('/users/students',ensureAdmin,(req,res)=>{
             users.find({isTeacher:false})
             .where('isAdmin').equals(false)
             .then((data)=>{
@@ -16,7 +17,7 @@ module.exports= function(app) {
 
         });
         //delete  a student from the database
-        app.delete('/users/:id',(req,res)=>{
+        app.delete('/users/:id',ensureAdmin,(req,res)=>{
             users.findOneAndRemove({_id:req.params.id})
             .then((data)=>{
               res.redirect('/users/students');
@@ -24,7 +25,7 @@ module.exports= function(app) {
         });
 
         //get all the teachers info from database
-        app.get('/users/teachers',(req,res)=>{
+        app.get('/users/teachers',ensureAdmin,(req,res)=>{
             users.find({isTeacher:true})
             .then((data)=>{
                 res.render('admin/teachers',{
@@ -36,7 +37,7 @@ module.exports= function(app) {
 
 
         //recent users are shown here only 7 at a time
-        app.get('/users/all',(req,res)=>{
+        app.get('/users/all',ensureAdmin,(req,res)=>{
             users.find()
             .sort({'_id':-1})
             .limit(7)
@@ -49,7 +50,7 @@ module.exports= function(app) {
 
         //show all complain by the users in admins account
 
-        app.get('/complains/all',(req,res)=>{
+        app.get('/complains/all',ensureAdmin,(req,res)=>{
               complains.find()
               .then((data)=>{
                   res.render('admin/complain',{
@@ -59,7 +60,7 @@ module.exports= function(app) {
 
         });
         //show all locations here
-        app.get('/locations',(req,res)=>{
+        app.get('/locations',ensureAdmin,(req,res)=>{
               locations.find()
               .then((data)=>{
                 res.render('admin/locations',{
@@ -69,7 +70,7 @@ module.exports= function(app) {
         });
 
         //edit a location
-        app.get('/locations/:id',(req,res)=>{
+        app.get('/locations/:id',ensureAdmin,(req,res)=>{
             locations.findOne({_id:req.params.id})
             .then((data)=>{
               console.log(data);
@@ -79,7 +80,7 @@ module.exports= function(app) {
             });
         });
 
-      
+
 
 
 

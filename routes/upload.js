@@ -5,7 +5,7 @@ var crypto= require('crypto');
 var path= require('path');
 var multer = require('multer');
 var GridFsStorage= require('multer-gridfs-storage');
-
+var {ensureAuthenticated,ensureAdmin,ensureTeacher}= require('../helpers/auth');
 module.exports =function(app) {
 
   var url = databaseinfo.databaseurluser();
@@ -40,14 +40,14 @@ const storage = new GridFsStorage({
 const upload = multer({ storage });
 // all set!
 
-app.post('/upload',upload.single('FileUpload'),(req,res)=>{
+app.post('/upload',upload.single('FileUpload'),ensureAdmin,(req,res)=>{
           res.redirect('/gallery/upload')
       //res.json({file:req.file});
 })
 
 
 //get file upload route
-app.get('/gallery/upload',(req,res)=>{
+app.get('/gallery/upload',ensureAdmin,(req,res)=>{
   gfs.files.find().toArray((err,files)=>{
         if(!files || files.length==0) {
           /*res.status(404).json({
@@ -110,7 +110,7 @@ app.get('/gallery/user',(req,res)=>{
 });
 
 //find all images
-app.get('/gallery',(req,res)=>{
+app.get('/gallery',ensureAdmin,(req,res)=>{
       gfs.files.find().toArray((err,files)=>{
             if(!files || files.length==0) {
               res.status(404).json({
@@ -146,7 +146,7 @@ app.get('/image/:id',(req,res)=>{
       })
 });
 //delete an images
-app.delete('/file/:id',(req,res)=>{
+app.delete('/file/:id',ensureAdmin,(req,res)=>{
   gfs.remove({_id:req.params.id,root:'uploads'}, function (err, gridStore) {
 if (err) return handleError(err);
 console.log('success');

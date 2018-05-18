@@ -3,12 +3,12 @@ var locations= require('../models/college');
 var teachers= require('../models/teacher');
 var events= require('../models/events');
 var mongoose= require('mongoose');
-
+var {ensureAuthenticated,ensureAdmin,ensureTeacher}= require('../helpers/auth');
 
 module.exports= function(app) {
 
 
-      app.post('/complain',(req,res)=>{
+      app.post('/complain',ensureAuthenticated,(req,res)=>{
           var email= req.body.email;
           var firstname= req.body.firstname;
           var lastname= req.body.lastname;
@@ -32,7 +32,7 @@ module.exports= function(app) {
 
       });
 
-      app.post('/locations',(req,res)=>{
+      app.post('/locations',ensureAdmin,(req,res)=>{
         var place= req.body.place;
         var description= req.body.description;
         var location= req.body.location;
@@ -50,7 +50,7 @@ module.exports= function(app) {
           });
       });
 
-      app.post('/locations/edit/:id',(req,res)=>{
+      app.post('/locations/edit/:id',ensureAdmin,(req,res)=>{
         var place= req.body.place;
         var description= req.body.description;
         var location= req.body.location;
@@ -68,7 +68,7 @@ module.exports= function(app) {
       });
 
       //add teachers info here
-      app.post('/teachers/add',(req,res)=>{
+      app.post('/teachers/add',ensureTeacher,(req,res)=>{
         teachers.findOne({user:req.user._id})
         .then((data)=>{
           if(data){
@@ -103,7 +103,7 @@ module.exports= function(app) {
 
       });
 
-      app.get('/teacher/info/:id',(req,res)=>{
+      app.get('/teacher/info/:id',ensureTeacher,(req,res)=>{
         teachers.findOne({user:req.params.id})
         .then((data)=>{
             res.render('teachers/edit',{
@@ -113,7 +113,7 @@ module.exports= function(app) {
 
       });
 
-      app.post('/teachers/update/:id',(req,res)=>{
+      app.post('/teachers/update/:id',ensureTeacher,(req,res)=>{
           teachers.findOneAndUpdate({user:req.params.id},{
             firstname:req.body.firstname,
             lastname:req.body.lastname,
@@ -129,7 +129,7 @@ module.exports= function(app) {
 
       });
 
-      app.get('/timetable/add',(req,res)=>{
+      app.get('/timetable/add',ensureTeacher,(req,res)=>{
           res.render('teachers/timetable');
       });
 
@@ -152,7 +152,7 @@ module.exports= function(app) {
       });
 
 
-      app.get('/events/show',(req,res)=>{
+      app.get('/events/show',ensureAuthenticated,(req,res)=>{
         if(req.query.search){
           const regex = new RegExp(escapeRegex(req.query.search), 'gi');
             events.find({name:regex})
@@ -174,14 +174,15 @@ module.exports= function(app) {
 }
       });
 
-      app.get('/teacher/show',(req,res)=>{
+      app.get('/teacher/show',ensureAuthenticated,(req,res)=>{
         if(req.query.search){
           const regex = new RegExp(escapeRegex(req.query.search), 'gi');
             teachers.find({firstname:regex})
             .then((data)=>{
               res.render('users/showteacher',{
                 data:data,
-                query:req.query.search
+                query:req.query.search,
+                input:req.query.search
               })
             })
         }
