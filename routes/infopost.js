@@ -174,6 +174,28 @@ module.exports= function(app) {
 }
       });
 
+      app.get('/user/locations',(req,res)=>{
+        if(req.query.search){
+          const regex = new RegExp(escapeRegex(req.query.search), 'gi');
+            locations.find({place:regex})
+            .then((data)=>{
+              res.render('users/showlocations',{
+                data:data,
+                query:req.query.search
+              })
+            })
+        }
+        else{
+        locations.find({})
+        .then((data)=>{
+          res.render('users/showlocations',{
+            data:data,
+            query:'Location'
+          })
+        })
+}
+      });
+
       app.get('/teacher/show',ensureAuthenticated,(req,res)=>{
         if(req.query.search){
           const regex = new RegExp(escapeRegex(req.query.search), 'gi');

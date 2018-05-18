@@ -149,7 +149,9 @@ padding: 20px 10px;
         </li>
         <li class="">
           <a href="/user/locations" class="collapsible-header active"><i class="material-icons">event_note</i>Locations</a>
+          <div class="collapsible-body filter-container" style="display: none; padding-top: 0px; margin-top: 0px; padding-bottom: 0px; margin-bottom: 0px;">
 
+          </div>
         </li>
 
 
@@ -162,33 +164,24 @@ padding: 20px 10px;
 
 
         {{#if data}}
-        <h4>All events</h4>
+        <h4>All Locations</h4>
       {{#each data}}
       <div id="card-container" class="row">
 
         <div class="col s12 m6 l4">
           <div class="card">
             <div class="card-content white-text">
-              <span class="card-title grey-text text-darken-4">{{name}}</span>
+              <span class="card-title grey-text text-darken-4">{{place}}</span>
 
               <p class="card-subtitle grey-text text-darken-2">{{description}}</p>
               <div class="row card-row">
-                <span class="text-darken-2 card-info"><i class="small material-icons">label</i>&nbsp;{{organizer}}</span>
+                <span class="text-darken-2 card-info"><i class="small material-icons">local_convenience_store</i>&nbsp;{{floor}}</span>
               </div>
               <div class="row card-row">
-                <span class="text-darken-2 card-info"><i class="small material-icons">place</i>&nbsp;{{venue}}</span>
-              </div>
-              <div class="row card-row">
-                <span class="text-darken-2 card-info"><i class="small material-icons">event</i>&nbsp;{{date}}</span>
-              </div>
-              <div class="row card-row">
-                <span class="text-darken-2 card-info"><i class="small material-icons">schedule</i>&nbsp;{{time}}</span>
+                <span class="text-darken-2 card-info"><i class="small material-icons">place</i>&nbsp;{{location}}</span>
               </div>
             </div>
-            <div class="card-action">
-              <a href="{{register}}" target="_blank"><i class="material-icons">&nbsp;language</i>Register</a>
-              <a  href="mailto:{{email}}" class="card-action-right"><i class="material-icons">&nbsp; contact_mail</i> Contact</a>
-            </div>
+
           </div>
 
         </div>
