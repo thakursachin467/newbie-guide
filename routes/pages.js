@@ -46,6 +46,50 @@ module.exports = function(app) {
     app.get('/info/add',(req,res)=>{
         res.render('admin/info');
     });
-  
+
+    app.get('/quicklinks/appliedscience',(req,res)=>{
+        res.render('pages/appliedeng')
+    });
+    app.get('/quicklinks/artsanddesign',(req,res)=>{
+        res.render('pages/artsanddesign')
+    });
+    app.get('/quicklinks/Banking',(req,res)=>{
+        res.render('pages/banking')
+    });
+
+    app.get('/quicklinks/buisness',(req,res)=>{
+        res.render('pages/buisness');
+    });
+    app.get('/quicklinks/cultural',(req,res)=>{
+        res.render('pages/cultural')
+    });
+    app.get('/quicklinks/engineering',(req,res)=>{
+        res.render('pages/engineering')
+    });
+    app.get('/quicklinks/hostels',(req,res)=>{
+        res.render('pages/hostels')
+    });
+    app.get('/quicklinks/library',(req,res)=>{
+        res.render('pages/library')
+    });
+
+    app.get('/quicklinks/planning',(req,res)=>{
+        res.render('pages/planning')
+    });
+
+    app.get('/quicklinks/retail',(req,res)=>{
+        res.render('pages/retail')
+    });
+    app.get('/quicklinks/sports',(req,res)=>{
+        res.render('pages/sports')
+    });
+
+    app.get('/quicklinks/transport',(req,res)=>{
+        res.render('pages/transport')
+    });
+
+
+
+
 
 }
