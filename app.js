@@ -92,6 +92,7 @@ dashboard(app);
 
 //will handle all the login logout and register routes
 login(app,passport);
+
 //to config our local Strategy with the login
 pasportConfig(passport);
 

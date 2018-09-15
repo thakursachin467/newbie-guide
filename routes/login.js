@@ -29,8 +29,6 @@ module.exports = function(app,passport) {
 
 
 
-
-
   app.post('/register',(req,res)=>{
     let errors=[];
     var admin= false;
