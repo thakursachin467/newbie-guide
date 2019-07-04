@@ -197,3 +197,36 @@ patch:
         patched: '2019-06-16T17:13:55.178Z'
     - firebase-admin > @google-cloud/firestore > google-gax > grpc > node-pre-gyp > request > stringstream:
         patched: '2019-06-16T17:13:55.178Z'
+  SNYK-JS-LODASH-450202:
+    - firebase-admin > @google-cloud/storage > async > lodash:
+        patched: '2019-07-04T02:07:38.697Z'
+    - snyk > lodash:
+        patched: '2019-07-04T02:07:38.697Z'
+    - snyk > snyk-nuget-plugin > lodash:
+        patched: '2019-07-04T02:07:38.697Z'
+    - snyk > snyk-nodejs-lockfile-parser > lodash:
+        patched: '2019-07-04T02:07:38.697Z'
+    - snyk > snyk-mvn-plugin > lodash:
+        patched: '2019-07-04T02:07:38.697Z'
+    - snyk > snyk-config > lodash:
+        patched: '2019-07-04T02:07:38.697Z'
+    - snyk > inquirer > lodash:
+        patched: '2019-07-04T02:07:38.697Z'
+    - mongoose > async > lodash:
+        patched: '2019-07-04T02:07:38.697Z'
+    - handlebars > async > lodash:
+        patched: '2019-07-04T02:07:38.697Z'
+    - snyk > snyk-php-plugin > @snyk/composer-lockfile-parser > lodash:
+        patched: '2019-07-04T02:07:38.697Z'
+    - firebase-admin > @google-cloud/storage > @google-cloud/common > google-auto-auth > async > lodash:
+        patched: '2019-07-04T02:07:38.697Z'
+    - firebase-admin > @google-cloud/firestore > @google-cloud/common > split-array-stream > async > lodash:
+        patched: '2019-07-04T02:07:38.697Z'
+    - firebase-admin > @google-cloud/storage > gcs-resumable-upload > google-auto-auth > async > lodash:
+        patched: '2019-07-04T02:07:38.697Z'
+    - firebase-admin > @google-cloud/firestore > google-gax > google-auto-auth > async > lodash:
+        patched: '2019-07-04T02:07:38.697Z'
+    - firebase-admin > @google-cloud/firestore > @google-cloud/common-grpc > @google-cloud/common > split-array-stream > async > lodash:
+        patched: '2019-07-04T02:07:38.697Z'
+    - firebase-admin > @google-cloud/firestore > @google-cloud/common-grpc > @google-cloud/common > google-auto-auth > async > lodash:
+        patched: '2019-07-04T02:07:38.697Z'
