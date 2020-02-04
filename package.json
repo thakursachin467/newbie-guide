@@ -28,7 +28,7 @@
     "express-handlebars": "^3.0.0",
     "express-session": "^1.15.6",
     "firebase": "^4.12.0",
-    "firebase-admin": "^5.12.0",
+    "firebase-admin": "^8.3.0",
     "gridfs-stream": "^1.1.1",
     "handlebars": "^4.1.2",
     "method-override": "^2.3.10",
@@ -38,7 +38,7 @@
     "multer-gridfs-storage": "^3.0.1",
     "passport": "^0.4.0",
     "passport-local": "^1.0.0",
-    "snyk": "^1.189.0"
+    "snyk": "^1.290.1"
   },
   "snyk": true
 }
