@@ -1,5 +1,5 @@
 # Snyk (https://snyk.io) policy file, patches or ignores known vulnerabilities.
-version: v1.13.5
+version: v1.14.1
 ignore: {}
 # patches apply the minimum changes required to fix a vulnerability
 patch:
@@ -230,3 +230,48 @@ patch:
         patched: '2019-07-04T02:07:38.697Z'
     - firebase-admin > @google-cloud/firestore > @google-cloud/common-grpc > @google-cloud/common > google-auto-auth > async > lodash:
         patched: '2019-07-04T02:07:38.697Z'
+  SNYK-JS-LODASH-567746:
+    - snyk > @snyk/dep-graph > lodash:
+        patched: '2020-05-01T02:09:15.969Z'
+    - firebase > @firebase/firestore > grpc > lodash:
+        patched: '2020-05-01T02:09:15.969Z'
+    - firebase-admin > @google-cloud/firestore > google-gax > lodash:
+        patched: '2020-05-01T02:09:15.969Z'
+    - snyk > @snyk/dep-graph > graphlib > lodash:
+        patched: '2020-05-01T02:09:15.969Z'
+    - snyk > snyk-go-plugin > graphlib > lodash:
+        patched: '2020-05-01T02:09:15.969Z'
+    - snyk > snyk-nodejs-lockfile-parser > graphlib > lodash:
+        patched: '2020-05-01T02:09:15.969Z'
+    - firebase-admin > @google-cloud/firestore > @google-cloud/common-grpc > grpc > lodash:
+        patched: '2020-05-01T02:09:15.969Z'
+    - firebase-admin > @google-cloud/firestore > google-gax > grpc > lodash:
+        patched: '2020-05-01T02:09:15.969Z'
+    - snyk > lodash:
+        patched: '2020-05-01T02:09:15.969Z'
+    - snyk > inquirer > lodash:
+        patched: '2020-05-01T02:09:15.969Z'
+    - snyk > snyk-config > lodash:
+        patched: '2020-05-01T02:09:15.969Z'
+    - snyk > snyk-mvn-plugin > lodash:
+        patched: '2020-05-01T02:09:15.969Z'
+    - snyk > snyk-nodejs-lockfile-parser > lodash:
+        patched: '2020-05-01T02:09:15.969Z'
+    - snyk > snyk-nuget-plugin > lodash:
+        patched: '2020-05-01T02:09:15.969Z'
+    - firebase-admin > @google-cloud/storage > async > lodash:
+        patched: '2020-05-01T02:09:15.969Z'
+    - snyk > snyk-php-plugin > @snyk/composer-lockfile-parser > lodash:
+        patched: '2020-05-01T02:09:15.969Z'
+    - firebase-admin > @google-cloud/storage > @google-cloud/common > google-auto-auth > async > lodash:
+        patched: '2020-05-01T02:09:15.969Z'
+    - firebase-admin > @google-cloud/firestore > google-gax > google-auto-auth > async > lodash:
+        patched: '2020-05-01T02:09:15.969Z'
+    - firebase-admin > @google-cloud/storage > gcs-resumable-upload > google-auto-auth > async > lodash:
+        patched: '2020-05-01T02:09:15.969Z'
+    - firebase-admin > @google-cloud/storage > @google-cloud/common > split-array-stream > async > lodash:
+        patched: '2020-05-01T02:09:15.969Z'
+    - firebase-admin > @google-cloud/firestore > @google-cloud/common-grpc > @google-cloud/common > google-auto-auth > async > lodash:
+        patched: '2020-05-01T02:09:15.969Z'
+    - firebase-admin > @google-cloud/firestore > @google-cloud/common-grpc > @google-cloud/common > split-array-stream > async > lodash:
+        patched: '2020-05-01T02:09:15.969Z'
